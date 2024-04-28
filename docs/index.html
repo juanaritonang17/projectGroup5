@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Kompetisi Coding</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body 
+        {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("bg1.jpeg");
+        }
+
+        form 
+        {
+            width: 70%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: lightgray;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+            text-align: center;
+            margin-bottom: 30px;
+            color: darkblue;
+        }
+
+        label 
+        {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"],textarea 
+        {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px lightgray;
+            border-radius: 3px;
+            background-color: whitesmoke;
+        }
+
+        select 
+        {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px lightgray;
+            border-radius: 3px;
+            background-color: whitesmoke;
+        }
+
+        button 
+        {
+            width: 100%;
+            padding: 10px;
+            background-color: darkblue;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        button:hover 
+        {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        <h2>Formulir Pendaftaran Kompetisi Coding</h2>
+
+        <label for="teamOrIndividual">Pilih Tim atau Individu:</label>
+        <select id="teamOrIndividual" name="teamOrIndividual" required>
+            <option value="">Pilih</option>
+            <option value="team">Tim</option>
+            <option value="individual">Individu</option>
+        </select><br><br>
+
+        <div id="teamDetails" style="display: none;">
+
+            <label for="teamName">Nama Peserta Tim:</label>
+            <textarea id="teamName" name="teamName"></textarea><br><br>
+
+            <label for="anggota">Jumlah Peserta (Maksimal 5 Peserta dalam 1 Tim) </label>
+            <input type="number" name="jml_anggota" id="jml_anggota" min="1" max="5"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+    
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+    
+            <label for="birthdate">Tanggal Pengisian:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+            <label for="teamUniversity">Perguruan Tinggi/Universitas Peserta Tim:</label>
+            <textarea id="teamUniversity" name="teamUniversity"></textarea><br><br>
+
+            <label for="teamMajor">Jurusan Studi Peserta Tim:</label>
+            <textarea id="teamMajor" name="teamMajor"></textarea><br><br>
+
+            <label for="teamExperience">Pengalaman Koding Sebelumnya:</label><br>
+            <input type="checkbox" id="python" name="teamExperience[]" value="python"> Python<br>
+            <input type="checkbox" id="java" name="teamExperience[]" value="java"> Java<br>
+            <input type="checkbox" id="csharp" name="teamExperience[]" value="csharp"> C#<br>
+            <input type="checkbox" id="javascript" name="teamExperience[]" value="javascript"> JavaScript<br>
+            <input type="checkbox" id="php" name="teamExperience[]" value="php"> PHP<br>
+            <input type="checkbox" id="ruby" name="teamExperience[]" value="ruby"> Ruby<br>
+            <input type="checkbox" id="c++" name="teamExperience[]" value="c++"> C++<br>
+            <input type="checkbox" id="go" name="teamExperience[]" value="go"> GO<br>
+            <input type="checkbox" id="swift" name="teamExperience[]" value="swift"> Swift<br>
+            <input type="checkbox" id="visual basic" name="teamExperience[]" value="visualbasic"> VisualBasic<br>
+            <input type="checkbox" id="html" name="teamExperience[]" value="html"> HTML<br>
+            <input type="checkbox" id="asp" name="teamExperience[]" value="asp"> asp<br>
+            <input type="checkbox" id="css" name="teamExperience[]" value="css"> CSS<br>
+            <input type="checkbox" id="perl" name="teamExperience[]" value="perl"> Perl<br>
+            <input type="checkbox" id="xml" name="teamExperience[]" value="xml"> XML<br>
+        </div>
+
+        <div id="individualDetails" style="display: none;">
+
+            <label for="name">Nama Peserta:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+    
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+    
+            <label for="birthdate">Tanggal Pengisian:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+            <label for="individualUniversity">Perguruan Tinggi/Universitas:</label>
+            <input type="text" id="individualUniversity" name="individualUniversity"><br><br>
+
+            <label for="individualMajor">Jurusan Studi:</label>
+            <input type="text" id="individualMajor" name="individualMajor"><br><br>
+
+            <label for="individualExperience">Pengalaman Koding Sebelumnya:</label><br>
+            <input type="checkbox" id="pythonIndividual" name="individualExperience[]" value="python"> Python<br>
+            <input type="checkbox" id="javaIndividual" name="individualExperience[]" value="java"> Java<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="csharp"> C#<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="javascript"> JavaScript<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="php"> PHP<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="ruby"> Ruby<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="go"> GO<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="swift"> Swift<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="visualbasic"> VisualBasic<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="htmml"> HTML<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="asp"> asp<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="css"> CSS<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="perl"> Perl<br>
+            <input type="checkbox" id="csharpIndividual" name="individualExperience[]" value="xml"> XML<br>
+        </div>
+
+        <button type="submit">Daftar</button>
+    </form>
+
+    <script>
+        document.getElementById('teamOrIndividual').addEventListener('change', function() {
+            if (this.value === 'team') 
+            {
+                document.getElementById('teamDetails').style.display = 'block';
+                document.getElementById('individualDetails').style.display = 'none';
+            } 
+            else if (this.value === 'individual') 
+            {
+                document.getElementById('teamDetails').style.display = 'none';
+                document.getElementById('individualDetails').style.display = 'block';
+            } 
+            else 
+            {
+                document.getElementById('teamDetails').style.display = 'none';
+                document.getElementById('individualDetails').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
